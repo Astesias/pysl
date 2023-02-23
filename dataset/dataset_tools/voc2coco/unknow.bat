@@ -1,0 +1,1 @@
+python x2coco.py --dataset_type voc  --voc_anno_dir D:\Desktop\.py\dataset\unknow\boats\train_data\Annotations  --voc_anno_list D:\Desktop\.py\dataset\unknow\boats\train_data\ImageSets\Main\val.txt  --voc_label_list D:\Desktop\.py\dataset\unknow\boats\train_data\ImageSets\Main\label.txt --voc_out_name val.json

@@ -1,0 +1,178 @@
+3DEXPERIENCE Marketplace for SOLIDWORKS
+AMD DVR64
+AMD Settings
+AMD Software
+AURIX Development Studio version 1.2.2
+Adobe Photoshop 2020
+Android Studio
+AutoHotkey 1.1.34.03
+Bandizip
+Bonjour
+Branding64
+Browser for SQL Server 2019
+Cura 15.04.6
+DAS64
+DriverX for MSP-FET430IF
+FormatFactory
+GnuWin32: sed-4.2.1
+IAR Embedded Workbench for MSP430 7.10
+IBM SPSS Statistics 26
+Infineon Memtool 4.8
+Intel(R) C++ Redistributables on Intel(R) 64
+Java 8 Update 131 (64-bit)
+Java Auto Updater
+Java SE Development Kit 8 Update 131 (64-bit)
+Keil μVision4
+Kite
+Maxon Cinema 4D R21
+Microsoft .NET Framework 4 Multi-Targeting Pack
+Microsoft Application Error Reporting
+Microsoft Edge
+Microsoft Edge Update
+Microsoft Help Viewer 1.0 Language Pack - CHS
+Microsoft Help 查看器 1.0 语言包 - CHS
+Microsoft ODBC Driver 17 for SQL Server
+Microsoft OLE DB Driver for SQL Server
+Microsoft Office 32-bit Components 2013
+Microsoft Office OSM MUI (Chinese (Simplified)) 2013
+Microsoft Office Proofing (Chinese (Simplified)) 2013
+Microsoft Office Proofing Tools 2013 - English
+Microsoft Office Shared 32-bit MUI (Chinese (Simplified)) 2013
+Microsoft Office Shared MUI (Chinese (Simplified)) 2013
+Microsoft Office 校对工具 2013 - 简体中文
+Microsoft SQL Server 2012 Native Client 
+Microsoft SQL Server 2019 (64-bit)
+Microsoft SQL Server 2019 RsFx Driver
+Microsoft SQL Server 2019 Setup (English)
+Microsoft SQL Server 2019 T-SQL Language Service 
+Microsoft Silverlight
+Microsoft Update Health Tools
+Microsoft VSS Writer for SQL Server 2019
+Microsoft Visio MUI (Chinese (Simplified)) 2013
+Microsoft Visio Professional 2013
+Microsoft Visual Basic for Applications 7.1 (x64)
+Microsoft Visual Basic for Applications 7.1 (x64) Chinese (Simplified)
+Microsoft Visual Basic for Applications 7.1 (x64) English
+Microsoft Visual C++ 2005 Redistributable
+Microsoft Visual C++ 2005 Redistributable (x64)
+Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.17
+Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.4148
+Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161
+Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.17
+Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4974
+Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161
+Microsoft Visual C++ 2010  x64 Redistributable - 10.0.40219
+Microsoft Visual C++ 2010  x86 Redistributable - 10.0.40219
+Microsoft Visual C++ 2010 Express - CHS
+Microsoft Visual C++ 2010 学习版 - 简体中文
+Microsoft Visual C++ 2012 Redistributable (x64) - 11.0.61030
+Microsoft Visual C++ 2012 Redistributable (x86) - 11.0.61030
+Microsoft Visual C++ 2012 x64 Additional Runtime - 11.0.61030
+Microsoft Visual C++ 2012 x64 Minimum Runtime - 11.0.61030
+Microsoft Visual C++ 2012 x86 Additional Runtime - 11.0.61030
+Microsoft Visual C++ 2012 x86 Minimum Runtime - 11.0.61030
+Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.30501
+Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.40660
+Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.30501
+Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.40660
+Microsoft Visual C++ 2013 x64 Additional Runtime - 12.0.40660
+Microsoft Visual C++ 2013 x64 Minimum Runtime - 12.0.40660
+Microsoft Visual C++ 2013 x86 Additional Runtime - 12.0.40660
+Microsoft Visual C++ 2013 x86 Minimum Runtime - 12.0.40660
+Microsoft Visual C++ 2015-2019 Redistributable (x64) - 14.29.30133
+Microsoft Visual C++ 2015-2019 Redistributable (x86) - 14.28.29914
+Microsoft Visual C++ 2019 X64 Additional Runtime - 14.29.30133
+Microsoft Visual C++ 2019 X64 Minimum Runtime - 14.29.30133
+Microsoft Visual C++ 2019 X86 Additional Runtime - 14.28.29914
+Microsoft Visual C++ 2019 X86 Minimum Runtime - 14.28.29914
+Microsoft Visual Studio 2010 Express Prerequisites x64 - CHS
+Microsoft Visual Studio 2010 Tools for Office Runtime (x64)
+Microsoft Visual Studio Tools for Applications 2015
+Microsoft Visual Studio Tools for Applications 2015 Finalizer
+Microsoft Visual Studio Tools for Applications 2015 x64 Hosting Support
+Microsoft Visual Studio Tools for Applications 2015 x86 Hosting Support
+MuMu模拟器
+MySQL Connector C++ 8.0
+MySQL Connector J
+MySQL Connector Net 8.0.16
+MySQL Connector Python v8.0.16 for Python v3.7
+MySQL Connector/ODBC 8.0
+MySQL Documents 8.0
+MySQL Examples and Samples 8.0
+MySQL Installer - Community
+MySQL Router 8.0
+MySQL Server 8.0
+MySQL Shell 8.0.16
+MySQL Workbench 8.0 CE
+Netron 3.9.7
+OpenAL
+Polyspace R2019a
+Python 3.7.0 Add to Path (64-bit)
+Python 3.7.0 Core Interpreter (64-bit)
+Python 3.7.0 Development Libraries (64-bit)
+Python 3.7.0 Documentation (64-bit)
+Python 3.7.0 Executables (64-bit)
+Python 3.7.0 Standard Library (64-bit)
+Python 3.7.0 Tcl/Tk Support (64-bit)
+Python 3.7.0 Test Suite (64-bit)
+Python 3.7.0 Utility Scripts (64-bit)
+Python 3.7.0 pip Bootstrap (64-bit)
+Quick Batch File Compiler 5.2.0.0
+RyzenMasterSDK
+SOLIDWORKS 2022 Chinese Simplified Resources
+SOLIDWORKS 2022 SP0
+SOLIDWORKS CAM 2022 SP0
+SOLIDWORKS Composer 2022 SP0
+SOLIDWORKS File Utilities 2022 SP0
+SOLIDWORKS Flow Simulation 2022 SP0 
+SOLIDWORKS Inspection 2022 SP0
+SOLIDWORKS PCB 2022 SP0
+SOLIDWORKS Plastics 2022 SP0
+SOLIDWORKS Visualize 2022 SP0
+SOLIDWORKS Visualize Boost 2022 SP0
+SOLIDWORKS eDrawings 2022 SP0
+SPSSPRO
+SQL Server 2019 Batch Parser
+SQL Server 2019 Common Files
+SQL Server 2019 Connection Info
+SQL Server 2019 DMF
+SQL Server 2019 Database Engine Services
+SQL Server 2019 Database Engine Shared
+SQL Server 2019 SQL Diagnostics
+SQL Server 2019 Shared Management Objects
+SQL Server 2019 Shared Management Objects Extensions
+SQL Server 2019 XEvent
+Security Update for Microsoft Office 2013 (KB2726958) 64-Bit Edition
+Security Update for Microsoft Office 2013 (KB2768005) 64-Bit Edition
+Security Update for Microsoft Office 2013 (KB2850064) 64-Bit Edition
+Security Update for Microsoft Office 2013 (KB2880463) 64-Bit Edition
+Sentinel Protection Installer 7.6.7
+Steam
+TeighaX 3.09
+Update for Windows 10 for x64-based Systems (KB5001716)
+VSTO环境安装包 版本 3.0
+Virtual Com port driver V1.4.0
+Virtual Serial Port Driver 7.2 (Build 7.2.308)
+Visual Basic for Application 7.0.1590
+WPTx64
+WeGame
+Windows Driver Package - Arduino LLC (www.arduino.cc) Arduino USB Driver (01/04/2013 1.0.0.0)
+Windows 驱动程序包 - FTDI CDM Driver Package - Bus/D2XX Driver (08/16/2017 2.12.28)
+Windows 驱动程序包 - FTDI CDM Driver Package - VCP Driver (08/16/2017 2.12.28)
+Windows 驱动程序包 - KEIL - Tools By ARM (WinUSB) USB  (08/29/2013 1.0.0.3)
+Windows 驱动程序包 - OpenMV, LLC (http://www.openmv.io) OpenMV Cam USB Driver (09/09/2016 1.1.1.0)
+Windows 驱动程序包 - Qualcomm Atheros Communications (AthBTPort) BluetoothVirtual  (08/23/2013 8.0.0001.0302)
+Windows 驱动程序包 - STMicroelectronics (STTub30) USB  (04/26/2018 3.0.6.1)
+ffdshow [rev 3154] [2009-12-09]
+msp430 tools
+分区助手 9.8.0
+向日葵
+微信
+搜狗输入法 11.6.0正式版
+搜狗输入法皮肤编辑器 6.6
+方方格子(WPS版) 版本 3.6.8.4
+电脑管家
+百度网盘
+网易云音乐
+腾讯QQ
+驱动天使

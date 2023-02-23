@@ -1,0 +1,2 @@
+2021-08-05 17:16:49.112 wechat.py[12] <module> -> Find Control Timeout: {Name: '文件传输助手', ControlType: ListControl}
+2021-08-05 17:23:23.107 wechat.py[12] <module> -> Find Control Timeout: {Name: '消息', ControlType: ListControl}

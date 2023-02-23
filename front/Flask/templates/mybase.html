@@ -1,0 +1,61 @@
+{# extends 'bootstrap/base.html' #}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../static/css/style.css">
+        <script src="../static/js/core.js"></script>
+    </head>
+    <body> 
+        <div class="main-header">
+            <img src="../static/images/profile2.png" class="profile circle" >
+            <div class="header-title" style="font-weight: bold;">
+                <img src="../static/images/title.png" alt="title" style="width: 30px;">
+            </div>
+            <ul class="header-ops-container">
+                <li><a class="header-ops header-title" href="#">首页</a></li>
+                <li><a class="header-ops header-title" href="#">管理</a></li>
+                <li><a class="header-ops header-title" href="#">动态</a></li>
+                <li><a class="header-ops header-title" href="#">消息</a></li>
+                <li><a class="header-ops header-title" href="#">我的</a></li>
+            </ul>
+        </div>
+
+        <body class="box">
+            {% block body %}{% endblock %}
+        </body>
+        
+        <footer>
+            <div class="main-footer">
+                <div class="footer-left" "> 
+                    <!-- <div style="font: 1.2em bold sans-serif;height: fit-content;text-align:center" class="link-list-text" >
+                        关于我们
+                    </div>      -->
+                    <div style="position:fixed;left:38%;white-space: nowrap;">我们</div>
+                    <div style="position:fixed;right:62%;white-space: nowrap;">关于</div>
+
+                    <ul class="link-list" style="height: fit-content;position:relative;top:20%">
+                        <li style="position:fixed;right:62.5%"> 
+                            <a href="https://github.com/Astesias" target="_blank">
+                            <img src="../static/images/github.ico" alt="github">
+                        </a></li>
+                        <li style="position:fixed;left:38.5%;">
+                            <a href="https://space.bilibili.com/195516167" target="_blank">
+                            <img src="https://www.bilibili.com/favicon.ico?v=1" alt="bilibili">
+                        </a></li>
+                    </ul>
+                </div>
+                <div  class="link-line"></div>
+                <div class="footer-right" ">
+
+                </div>
+            </div>
+            <div style="font: 1em bold sans-serif;height: fit-content;
+                         text-align:center;bottom:0.5%;position:fixed;width: 100%;">
+                Create by ysl 2023
+            </div>   
+        </footer>
+    </body>
+</html>

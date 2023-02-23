@@ -1,0 +1,1 @@
+python tools/x2coco.py --dataset_type voc  --voc_anno_dir D:\git\paddle\dataset\voc\VOCdevkit_insect\VOC2007\Annotations  --voc_anno_list D:\git\paddle\dataset\voc\VOCdevkit_insect\VOC2007\ImageSets\Main\trainval.txt  --voc_label_list D:\git\paddle\dataset\voc\label_list_insect.txt --voc_out_name result.json

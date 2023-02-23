@@ -1,0 +1,1 @@
+cd /d D:/Desktop/.py/temp/  &                 net start sshd && net start MySQL80                                  

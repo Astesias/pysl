@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TEST HTML</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../static/css/style.css">
+        <script src="../static/js/core.js"></script>
+    </head>
+    <body>
+        <p class="box"></p>
+        <h1>Test</h1>
+        <h3>{{ time }}</h3>
+        {% for _ in time %}
+            {% if _!=' ' %}
+            <span>{{ _ }}</span>
+            {% else %}
+            <p>     </p>
+            {% endif %}
+        {% endfor %}
+        <p>My cat is <strong>very</strong> grumpy</p>
+        <img src='static/images/favicon.ico' alt="favorite icon" />
+
+        <div>link list</div>
+        <ul>
+          <li>
+            <div>
+                <a href="https://space.bilibili.com/195516167?spm_id_from=333.1007.0.0" target="_blank">
+                    <img src='static/images/favicon.ico' alt="favorite icon" />
+                </a>
+                <a href="https://space.bilibili.com/195516167?spm_id_from=333.1007.0.0" 
+                target="_blank" class="big">bilibili主页</a>
+            </div>
+          </li>
+          <li><div>args:  {{ dict(args)|get_dict }}</div></li>
+          <li><a href="#" onclick="window.close()">关闭</a> </li>
+          <!-- #表示本地 这么做可以给点击事件加上超链接 -->
+        </ul>
+        
+    </body>
+</html>
