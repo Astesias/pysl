@@ -197,9 +197,10 @@ class excel_access:
         except:
             raise IOError('文件被占用或已存在')
             
-class for_list(): #对列表进行头尾拼接
-    def __init__(self,list):
-        self.list=list
+class for_list(list):
+    def __init__(self,l):
+        super(for_list,self).__init__(l)
+        self.list=l
     def __getitem__(self,index):
         return self.list[index%len(self.list)]
   
