@@ -123,6 +123,34 @@ from functools import wraps
 
 ########################################################################################################
 
+class Auto_model():
+    def __init__(self,model_dir,model_name_like,model_extend_name='.pth'):
+        self.model_dir=model_dir
+        self.model_name_like=model_name_like
+        self.model_extend_name=model_extend_name
+        newpath(os.path.join(model_dir,model_name_like))
+
+    def auto_load(self):
+        all_model=os.listdir(self.model_dir)
+        latest=None
+        
+        for _ in all_model:
+            n=_.strip(self.model_name_like).strip(self.model_extend_name)
+            n=int(n)
+            if not latest or n>latest:
+                latest=n
+        if latest:
+            r=os.path.join(self.model_dir,self.model_name_like+f'{n}{self.model_extend_name}')
+            print(f'load model {r}')
+            return r
+        else:
+            print('no model exist')
+            return None
+        
+    def auto_save(self,n):
+        r=os.path.join(self.model_dir,self.model_name_like+f'{n}{self.model_extend_name}')
+        return r
+
 class ezlog():
     def __init__(self,filename):
         logging.basicConfig(
@@ -344,13 +372,32 @@ class Timer():
         self.sep=sep
     def T(self):
         if time.time()-self.start>self.sep:
-            self.start=time.time()  
+            self.start=time.time()
             return True
         else:
             return False
     
 ###################################################################################################### 
-    
+  
+
+def add_argments(dicts,help='argments get'):
+    import argparse
+    parser = argparse.ArgumentParser(description=help)
+    for k,v in dicts.items():
+        argname,types,*_=v
+        if _:
+            default=_[0]
+            if len(_)>=2:
+                help_=_[-1]
+            else:
+                help_='None'
+        else:
+            default=None
+            help_='None'
+
+        parser.add_argument(argname, type=types, default=default,help=help_)
+    return parser.parse_args()
+
 def bgr2rgb(t):
     
      t=list(t)

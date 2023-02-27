@@ -1,0 +1,1 @@
+@echo off && @echo sb && @pause
