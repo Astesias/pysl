@@ -379,6 +379,7 @@ class Timer():
     
 ###################################################################################################### 
   
+# TODO add_arg_bool sys.argv
 
 def add_argments(dicts,help='argments get'):
     import argparse
@@ -1557,6 +1558,7 @@ def lazyimport(module,asnmae=None):
 ###################################################################################################### 
 
 pysl_lib='D:\Anconda\Lib\site-packages'
+# pysl_lib='D:\Anconda\envs\yolo\Lib\site-packages'
 
 if __name__=='pysl':
     # current_time = getime()
@@ -1624,6 +1626,10 @@ elif __name__=='__main__':
 # buff = BytesIO(rp_body)
 # f = gzip.GzipFile(fileobj=buff)
 # htmls = f.read().decode('utf-8')
+
+
+# old=sys.stdout
+# sys.stdout = codecs.lookup('iso8859-1')[-1]( sys.stdout)
 
 
 # 		p2 v p1
