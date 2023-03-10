@@ -1034,50 +1034,6 @@ def path2dirname(path):
         raise TypeError('path is a str,not {}'.format(type(path)))
     return path[:path.rfind('\\')+1]
 
-def printer(*s,mode=1,end='',sep=' ',agroup=0):
-    if len(s)==1 and type(s[0])==type([]) and agroup:
-        s=tuple(s[0])
-    if len(s)==1:
-        print(s[0],end=end,sep=sep)
-
-    else:
-        b=''
-        e='\n'
-        send=eend=end
-        if (mode-1)//4==0:
-            send+=e
-            # print('结尾+换行')
-        if (mode-1)//4==1:
-            send=e
-            # print('换行')
-        if (mode-1)//4==2:
-            send=send
-            # print('结尾')
-        if (mode-1)//4==3:
-            send=b
-            # print('')
-        
-        mode=(mode-1)%4
-        
-        if mode==0:
-            eend+=e
-            # print('结尾+换行')
-        if mode==1:
-            eend=e
-            # print('换行')
-        if mode==2:
-            eend=end
-            # print('结尾')
-        if mode==3:
-            eend=b
-            # print('')
-            
-        for i in range(len(s)):
-           if i!=len(s)-1:
-               print(s[i],end=send,sep=sep)
-           else:
-               print(s[i],end=eend,sep=sep)
-        
 
 def pic_insert_pic(
                     back_pic,front_pic,
