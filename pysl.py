@@ -129,17 +129,23 @@ class Auto_model():
         self.model_name_like=model_name_like
         self.model_extend_name=model_extend_name
         newpath(os.path.join(model_dir,model_name_like))
+    
+    def create_new(self,n=0):
+        return os.path.join(self.model_dir,self.model_name_like+f'{n}{self.model_extend_name}')
 
-    def auto_load(self):
+    def auto_load(self,get_latest=False):
         all_model=os.listdir(self.model_dir)
         latest=None
-        
+
         for _ in all_model:
+
             n=_.strip(self.model_name_like).strip(self.model_extend_name)
             n=int(n)
             if not latest or n>latest:
                 latest=n
-        if latest:
+        if get_latest:
+            return latest
+        if latest!=None:
             r=os.path.join(self.model_dir,self.model_name_like+f'{n}{self.model_extend_name}')
             print(f'load model {r}')
             return r
@@ -380,6 +386,20 @@ class Timer():
 ###################################################################################################### 
   
 # TODO add_arg_bool sys.argv
+
+def args_sys():
+    import sys
+    return sys.argv[1:]
+
+def args_dir2files(args):
+    r=[]
+    for i in args:
+        if os.path.isdir(i):
+            for j in os.listdir(i):
+                r.append(os.path.join(i,j))
+        elif os.path.exists(i):
+            r.append(i)
+    return r
 
 def add_argments(dicts,help='argments get'):
     import argparse
@@ -678,8 +698,15 @@ def easy_request(url,header=None,format_url_args=None,
         return response
     
     try:
+        if isinstance(response,bytes):
+            response=str(response,encoding='utf8')
+            return response
+    except:
+        pass
+    try:
         data=json.loads(response)
         return data
+
     except :
         soup=bs(response,features='lxml')
         return soup
@@ -963,12 +990,21 @@ def mmap(func_or_method,ite,arg=[],kw={}):
             r.append( func_or_method(i,*arg,**kw) )
         return r
 
-def newpath(path):
-    d=os.path.split(path)[0]
-    if os.path.exists(d):
-        pass
-    else:
-        os.mkdir(d)
+def newpath(path,isfile=False):
+    assert path[0]!='/'
+    p=[]
+    for i in range(10):
+        if not os.path.exists(path):
+            l,r=os.path.split(path)
+            p.append(r)
+        else:
+            break
+        path=l[:]
+    if isfile:
+        p=p[1:]
+    for _ in p[::-1]:
+        l=os.path.join(l,_)
+        os.mkdir(l)
 
 
 def path2filename(path):
