@@ -158,6 +158,21 @@ class Auto_model():
         r=os.path.join(self.model_dir,self.model_name_like+f'{n}{self.model_extend_name}')
         return r
 
+class backref_dict(dict):
+    def __init__(self,d,k2v=False):
+        if k2v:
+            assert len(list(d.values()))==len(set(d.values())),'No element can duplication'
+        self.k2v=k2v
+        super(backref_dict,self).__init__(d)
+    def backref(self,vaule):
+        re=[]
+        for i,j in self.items():
+            if j==vaule and self.k2v:
+                return i
+            else:
+                re.append(i)
+        return re
+
 class dir_enter:
     def __init__(self,dir_=None):
         if not dir_:
