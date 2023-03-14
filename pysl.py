@@ -17,6 +17,7 @@ import sys
 import json
 import time
 import types
+import shutil
 import random
 import logging
 import threading
@@ -156,6 +157,49 @@ class Auto_model():
     def auto_save(self,n):
         r=os.path.join(self.model_dir,self.model_name_like+f'{n}{self.model_extend_name}')
         return r
+
+class dir_enter:
+    def __init__(self,dir_=None):
+        if not dir_:
+            dir_=truepath(__file__)
+        self.dir=dir_
+    def __enter__(self):
+        return self
+    def __exit__(self, type, value, trace):
+        pass
+    def _lisdir(self):
+        return os.listdir(self.dir)
+    def _realpath(self,path):
+        return os.path.join(self.dir,path)
+    
+    def file(self,name):
+        return os.path.join(self.dir,name)
+    
+    def md(self,path):
+        os.mkdir(self._realpath(path))
+    def cp(self,old,new):
+        shutil.copy(self._realpath(old),self._realpath(new))
+    def mv(self,old,new):
+        shutil.move(self._realpath(old),self._realpath(new))
+    def rm(self,path):
+        if os.path.isfile(self._realpath(path)):
+            os.remove(self._realpath(path))
+        else:
+            shutil.rmtree(self._realpath(path))
+    def cd(self,path):
+        self.dir=os.path.abspath(self._realpath(path))
+        
+    @property
+    def ls(self):
+        for _ in self._lisdir():
+            __=os.path.join(self.dir,_)
+            if os.path.isfile(__):
+                cfmt_print(f'@e@{_}',end=' ')
+            else:
+                cfmt_print(f'@^B@{_}',end=' ')
+        print()
+
+
 
 class ezlog():
     def __init__(self,filename):
@@ -385,7 +429,7 @@ class Timer():
     
 ###################################################################################################### 
   
-# TODO add_arg_bool sys.argv
+
 
 def args_sys():
     import sys
@@ -401,6 +445,7 @@ def args_dir2files(args):
             r.append(i)
     return r
 
+# TODO add_arg_bool sys.argv
 def add_argments(dicts,help='argments get'):
     import argparse
     parser = argparse.ArgumentParser(description=help)
@@ -1032,7 +1077,9 @@ def filename2end(path,filp=0,find='.',include=True):
 def path2dirname(path):
     if type(path)!=type('str'):
         raise TypeError('path is a str,not {}'.format(type(path)))
-    return path[:path.rfind('\\')+1]
+    a=path[:path.rfind('\\')+1]
+    b=path[:path.rfind('/')+1]
+    return a if len(a)>len(b) else b
 
 
 def pic_insert_pic(
@@ -1631,3 +1678,6 @@ elif __name__=='__main__':
 # 		百度组
 # 		mutiprocess
 #       ftp 远程cmd
+#       file dir enter with
+#       backref_dict
+

@@ -20,4 +20,7 @@ from io import BytesIO
 # im_copy.show()
 
 
-response=easy_request('https://api.yimian.xyz/img',pic=True)
+response=easy_request('https://api.yimian.xyz/img',pic=True).content
+print(type(response))
+img=Image.open(BytesIO(response))
+img.show()
