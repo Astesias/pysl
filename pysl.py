@@ -169,7 +169,7 @@ class backref_dict(dict):
         for i,j in self.items():
             if j==vaule and self.k2v:
                 return i
-            else:
+            elif j==vaule:
                 re.append(i)
         return re
 
@@ -1693,6 +1693,3 @@ elif __name__=='__main__':
 # 		百度组
 # 		mutiprocess
 #       ftp 远程cmd
-#       file dir enter with
-#       backref_dict
-
