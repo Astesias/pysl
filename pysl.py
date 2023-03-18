@@ -616,6 +616,14 @@ def D(x): #方差
         d+=(x[i]-avg)**2
     return  d
 
+def dir_search(clas,t,uplow=True):
+    for i in dir(clas):
+        if not uplow:
+            if t in i:
+                print(i)
+        else:
+            if t.lower() in i.lower():
+                print(i)
 
 def drawtri(img, pt1, pt2, pt3, pt4, color=(255,255,255), lineWidth=2):
     # cv2.line(img, pt1, pt2, color, lineWidth)
@@ -766,7 +774,6 @@ def easy_request(url,header=None,format_url_args=None,
     try:
         data=json.loads(response)
         return data
-
     except :
         soup=bs(response,features='lxml')
         return soup
