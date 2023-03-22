@@ -25,6 +25,10 @@ def setcfg():
     else:
         with open('cfg.json') as fp:
             newcfg=json.load(fp)
+        for i in list(newcfg.keys()):
+            if i not in list(cfg.keys()):
+                newcfg.pop(i)
+            
         cfg.update(newcfg)
         
         with open('cfg.json','w') as fp:
