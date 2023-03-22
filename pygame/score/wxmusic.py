@@ -1,7 +1,7 @@
 # _*_ coding:utf-8 _*_
 import wx
 from pysl import dir_search,flatten,backref_dict,admin_monitor,is_admin
-from man_core import AutoScroe as asc
+from man_core import AutoScore as asc
 from man_core import map_dict
 import PyHook3,queue,pythoncom
 import win32api
@@ -10,7 +10,7 @@ class MyFrame(wx.Frame):
     def __init__(self, parent, id):
         
         self.flag=False
-        self.iter=asc('guitar.txt',type=asc.PHONE_TYPE,name='吉他与孤独与蓝色星球').iter()
+        self.iter=asc('吉他与孤独与蓝色星球.txt',type=asc.PHONE_TYPE).iter()
         self.tmp=[]
         self.keys=None
         
@@ -72,8 +72,6 @@ class MyFrame(wx.Frame):
         self.topblock3.SetFont(wx.Font(20, wx.DEFAULT, wx.FONTSTYLE_NORMAL, wx.NORMAL))
         
         self.topblock=[self.topblock1,self.topblock1,self.topblock2,self.topblock3]
-
-        print(1)
 
     def OnHide(self,event):
         self.Hide()
@@ -170,13 +168,15 @@ def score_filter(item):
         for __ in _:
             if __!='#':
                 index=map_dict.backref(__)
-                res[0 if index[0]=='+' else (-1 if index[0]=='-' else 1)].append(__.upper()) 
+                print(index,__,'xxx')
+                if index:
+                    res[0 if index[0]=='+' else (-1 if index[0]=='-' else 1)].append(__.upper()) 
         re.append(res)  
     
     return re
     
 if __name__ == "__main__":
-    if is_admin():
+    if not is_admin():
         from threading import Thread
         
         app = wx.App() 
@@ -189,7 +189,7 @@ if __name__ == "__main__":
         def OnKeyboardEvent(event):
             global Q,frame
             Q.put(event.Key)  
-            print(event.Key)
+            # print(event.Key)
             frame.key_down(wx.EVT_BUTTON)        
             return True
         

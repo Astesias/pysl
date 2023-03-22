@@ -1,9 +1,12 @@
-import pyautogui as pau
-import keyboard
-import time
 import re
-from pysl import backref_dict,flatten,path2filename,admin_monitor,is_admin
-    
+import os
+import time
+import keyboard
+from cfgset import setcfg
+from keypresser import press_keys
+from utils import backref_dict,path2filename,admin_monitor,is_admin
+
+
 map_dict=backref_dict(
             {'+1': 'q',
              '+2': 'w',
@@ -12,6 +15,13 @@ map_dict=backref_dict(
              '+5': 't',
              '+6': 'y',
              '+7': 'u',
+                         '-1': 'z',
+                         '-2': 'x',
+                         '-3': 'c',
+                         '-4': 'v',
+                         '-5': 'b',
+                         '-6': 'n',
+                         '-7': 'm',
                     '1': 'a',
                     '2': 's',
                     '3': 'd',
@@ -19,13 +29,6 @@ map_dict=backref_dict(
                     '5': 'g',
                     '6': 'h',
                     '7': 'j',
-                         '-1': 'z',
-                         '-2': 'x',
-                         '-3': 'c',
-                         '-4': 'v',
-                         '-5': 'b',
-                         '-6': 'n',
-                         '-7': 'm'
             },k2v=True)
 
 class AutoScore:
@@ -38,12 +41,13 @@ class AutoScore:
     HALF_AUTO_MODE=1
     NO_AUTO_MODE=-1
     
-    def __init__(self,score_path,type=PHONE_TYPE):
-        self.score_path=score_path
+    def __init__(self,score_path,type=WIN_TYPE,score_dir='scoretxt/'):
+        self.score_path=os.path.join(score_dir,score_path)
         self.name=path2filename(score_path)
         self.type=type
         self.form_data=self._load(type)
         self._iter,self._data=self._iter_score(self.form_data)
+        self._play=False
      
     def iter(self):
         return self._iter
@@ -55,32 +59,33 @@ class AutoScore:
         pass
     def play(self,mode=AUTO_MODE,bpm=None,shifting=0):
         if bpm:
-            step=60/bpm
+            step=60/bpm*192/210
         else:
-            step=60/200
+            step=60/210
+
         while 1:
             if keyboard.is_pressed('home'):
-                # op=pau.confirm(text=f'开始演奏 {self.name}', title='auto play', buttons=['OK', 'Cancel'])
-                # if op=='OK':
-                    break
-        if mode!=self.NO_AUTO_MODE:
-            for _ in self.iter():
-                for __ in _: # [cnq j]
-                    sclen=len(__)
-                    for ___ in __: # cnq j
-                        if len(___)>1:
-                            pau.press(list(___))
-                        else:
-                            pau.press(___)     
-                        if mode==self.HALF_AUTO_MODE:
-                            while 1:
-                                if keyboard.is_pressed('space') or keyboard.is_pressed('enter'):
-                                    break
-                        else:
-                            if sclen==1:
-                                time.sleep(step/2)
+                self._play=True
+                break
+        while 1:
+            if mode!=self.NO_AUTO_MODE and self._play:
+                for _ in self.iter():
+                    for __ in _: 
+                        sclen=len(__)
+                        for ___ in __:
+                            press_keys(___)
+                            if mode==self.HALF_AUTO_MODE:
+                                while 1:
+                                    if keyboard.is_pressed('space') or keyboard.is_pressed('enter'):
+                                        break
                             else:
-                                time.sleep(step/4/sclen)
+                                if sclen==1:
+                                    time.sleep(step)
+                                else:
+                                    time.sleep(step/sclen)
+                self._play=False
+            else:
+                break
 
     def _load(self,type):
         return self.__type_load(self.type)
@@ -153,23 +158,51 @@ class AutoScore:
         dp=dp.replace(' ','')
         dp=dp.replace('/','|')
         if dp[0]=='|':
-            dp='$'+dp
-        if dp[0-1]=='|':
+            if dp[1]=='#':
+                dp=dp[1:]
+            else:
+                dp='#'+dp
+        if dp[-1]=='|':
             dp=dp[:-1]
         return dp
     
 
 if __name__ == '__main__':
+    # print(*zip(list(range(len(os.listdir('./scoretxt')))),os.listdir('./scoretxt')),sep='\n')
+    
+    
     if is_admin():
-        a=AutoScore('吉他与孤独与蓝色星球.txt',type=AutoScore.PHONE_TYPE)
-        b=AutoScore('拼凑的断音.txt',type=AutoScore.WIN_TYPE)
-        
-        b.play(mode=AutoScore.AUTO_MODE,bpm=150)
+        while 1:
+            cfg=setcfg()
+            if not cfg:
+                print('添加乐谱后再打开')
+                time.sleep(5)
+                break
+            print('_______________________________')
+            for i,j in enumerate(os.listdir('./scoretxt')):
+                print(f'{i+1}. {j}')
+            print('_______________________________')
+                
+            index=int(input('演奏曲目:'))
+            sc=os.listdir('./scoretxt')[index-1]
+            
+            print('\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
+            print(f'准备演奏 {sc}')
+            type=cfg[sc]['type']
+            print('乐谱类型为 '+('键盘(1)' if type==1 else '手机(0)'))
+            bpm=cfg[sc]['bpm']
+            if not bpm:
+                print('bmp未设置，默认为192')
+            else:
+                print(f'bpm{bpm}')
+            dd=AutoScore(sc,type=type)
+            print('按home键开始演奏')
+            print('<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<')
+            
+            dd.play(mode=AutoScore.AUTO_MODE,bpm=bpm)
+
     else:
         admin_monitor(__file__)
-
-
-
 
 '''
 class
@@ -180,5 +213,15 @@ write
 
 '''
 
+'''
+210 gt
+210 1
+210 toa
+
+            # aa=AutoScore('吉他与孤独与蓝色星球.txt',type=AutoScore.PHONE_TYPE)
+            # bb=AutoScore('拼凑的断音.txt',type=AutoScore.WIN_TYPE)
+            # cc=AutoScore('1.txt',type=AutoScore.WIN_TYPE)
+
+'''
 
 
