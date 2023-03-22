@@ -626,6 +626,11 @@ def dir_search(clas,t,uplow=True):
             if t.lower() in i.lower():
                 print(i)
 
+def dow(y,m,d):
+    t=[0,3,2,5,0,3,5,1,6,4,2,4]
+    y-=m<3
+    return int((y+y/4-y/100+y/400+t[m-1]+d)%7)
+
 def drawtri(img, pt1, pt2, pt3, pt4, color=(255,255,255), lineWidth=2):
     # cv2.line(img, pt1, pt2, color, lineWidth)
     cv2.line(img, pt2, (pt2[0],pt3[1]), (0,0,255), lineWidth)
