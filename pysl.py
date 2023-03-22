@@ -214,8 +214,6 @@ class dir_enter:
                 cfmt_print(f'@^B@{_}',end=' ')
         print()
 
-
-
 class ezlog():
     def __init__(self,filename):
         logging.basicConfig(
@@ -445,6 +443,9 @@ class Timer():
 ###################################################################################################### 
   
 
+def admin_monitor(file):
+    import ctypes
+    ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, file, None, 1)
 
 def args_sys():
     import sys
@@ -948,7 +949,15 @@ def get_file_md5(filename):
 def get_file_same(file1,file2):
     return get_file_md5(file1)==get_file_md5(file2)
 
-        
+def is_admin():
+    import ctypes
+    try:
+        1/ctypes.windll.shell32.IsUserAnAdmin()
+        return True
+    except:
+        return False  
+
+
 def isChinese(chs):
     if len(chs)==1:
         return u'\u4e00' <= chs <= u'\u9fff'

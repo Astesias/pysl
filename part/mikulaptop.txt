@@ -1,36 +1,84 @@
 3DEXPERIENCE Marketplace for SOLIDWORKS
-AMD DVR64
 AMD Settings
-AMD Software
 AURIX Development Studio version 1.2.2
 Adobe Photoshop 2020
 Android Studio
+Application Verifier x64 External Package
 AutoHotkey 1.1.34.03
 Bandizip
 Bonjour
-Branding64
 Browser for SQL Server 2019
+CAJViewer
+CMake
 Cura 15.04.6
 DAS64
 DriverX for MSP-FET430IF
 FormatFactory
 GnuWin32: sed-4.2.1
+Goose Goose Duck
 IAR Embedded Workbench for MSP430 7.10
 IBM SPSS Statistics 26
+IIS 10.0 Express
+IIS Express Application Compatibility Database for x64
+IIS Express Application Compatibility Database for x86
 Infineon Memtool 4.8
 Intel(R) C++ Redistributables on Intel(R) 64
 Java 8 Update 131 (64-bit)
 Java Auto Updater
 Java SE Development Kit 8 Update 131 (64-bit)
-Keil ¶ÃVision4
+Keil ŒºVision4
 Kite
+Kits Configuration Installer
+MSI Development Tools
 Maxon Cinema 4D R21
+Microsoft .NET 6.0 Templates 7.0.202 (x64)
+Microsoft .NET 7.0 Templates 7.0.202 (x64)
+Microsoft .NET AppHost Pack - 6.0.15 (x64)
+Microsoft .NET AppHost Pack - 6.0.15 (x64_arm)
+Microsoft .NET AppHost Pack - 6.0.15 (x64_arm64)
+Microsoft .NET AppHost Pack - 6.0.15 (x64_x86)
+Microsoft .NET AppHost Pack - 7.0.4 (x64)
+Microsoft .NET AppHost Pack - 7.0.4 (x64_arm)
+Microsoft .NET AppHost Pack - 7.0.4 (x64_arm64)
+Microsoft .NET AppHost Pack - 7.0.4 (x64_x86)
+Microsoft .NET CoreRuntime For CoreCon
+Microsoft .NET CoreRuntime SDK
 Microsoft .NET Framework 4 Multi-Targeting Pack
+Microsoft .NET Framework 4.7.2 SDK
+Microsoft .NET Framework 4.7.2 SDK (ÁÆÄ‰Ωì‰∏≠Êñá)
+Microsoft .NET Framework 4.8 SDK
+Microsoft .NET Framework 4.8 SDK (ÁÆÄ‰Ωì‰∏≠Êñá)
+Microsoft .NET Host - 7.0.4 (x64)
+Microsoft .NET Host - 7.0.4 (x86)
+Microsoft .NET Host FX Resolver - 7.0.4 (x64)
+Microsoft .NET Host FX Resolver - 7.0.4 (x86)
+Microsoft .NET Native SDK
+Microsoft .NET Runtime - 6.0.15 (x64)
+Microsoft .NET Runtime - 6.0.15 (x86)
+Microsoft .NET Runtime - 7.0.4 (x64)
+Microsoft .NET Runtime - 7.0.4 (x86)
+Microsoft .NET SDK 7.0.202 (x64) from Visual Studio
+Microsoft .NET Standard Targeting Pack - 2.1.0 (x64)
+Microsoft .NET Targeting Pack - 6.0.15 (x64)
+Microsoft .NET Targeting Pack - 6.0.15 (x86)
+Microsoft .NET Targeting Pack - 7.0.4 (x64)
+Microsoft .NET Targeting Pack - 7.0.4 (x86)
+Microsoft .NET Toolset 7.0.202 (x64)
+Microsoft ASP.NET Core 6.0.15 Shared Framework (x64)
+Microsoft ASP.NET Core 6.0.15 Shared Framework (x86)
+Microsoft ASP.NET Core 6.0.15 Targeting Pack (x64)
+Microsoft ASP.NET Core 6.0.15 Targeting Pack (x86)
+Microsoft ASP.NET Core 7.0.4 Shared Framework (x64)
+Microsoft ASP.NET Core 7.0.4 Shared Framework (x86)
+Microsoft ASP.NET Core 7.0.4 Targeting Pack (x64)
+Microsoft ASP.NET Core 7.0.4 Targeting Pack (x86)
 Microsoft Application Error Reporting
-Microsoft Edge
 Microsoft Edge Update
+Microsoft Edge WebView2 Runtime
+Microsoft HTML Help Workshop Package
 Microsoft Help Viewer 1.0 Language Pack - CHS
-Microsoft Help ≤Èø¥∆˜ 1.0 ”Ô—‘∞¸ - CHS
+Microsoft Help Êü•ÁúãÂô® 1.0 ËØ≠Ë®ÄÂåÖ - CHS
+Microsoft NetStandard SDK
 Microsoft ODBC Driver 17 for SQL Server
 Microsoft OLE DB Driver for SQL Server
 Microsoft Office 32-bit Components 2013
@@ -39,13 +87,17 @@ Microsoft Office Proofing (Chinese (Simplified)) 2013
 Microsoft Office Proofing Tools 2013 - English
 Microsoft Office Shared 32-bit MUI (Chinese (Simplified)) 2013
 Microsoft Office Shared MUI (Chinese (Simplified)) 2013
-Microsoft Office –£∂‘π§æﬂ 2013 - ºÚÃÂ÷–Œƒ
+Microsoft Office Ê†°ÂØπÂ∑•ÂÖ∑ 2013 - ÁÆÄ‰Ωì‰∏≠Êñá
+Microsoft Portable Library Multi-Targeting Pack
+Microsoft Portable Library Multi-Targeting Pack Language Pack - chs
 Microsoft SQL Server 2012 Native Client 
+Microsoft SQL Server 2016 LocalDB
 Microsoft SQL Server 2019 (64-bit)
 Microsoft SQL Server 2019 RsFx Driver
 Microsoft SQL Server 2019 Setup (English)
 Microsoft SQL Server 2019 T-SQL Language Service 
 Microsoft Silverlight
+Microsoft UniversalWindowsPlatform SDK
 Microsoft Update Health Tools
 Microsoft VSS Writer for SQL Server 2019
 Microsoft Visio MUI (Chinese (Simplified)) 2013
@@ -64,7 +116,7 @@ Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161
 Microsoft Visual C++ 2010  x64 Redistributable - 10.0.40219
 Microsoft Visual C++ 2010  x86 Redistributable - 10.0.40219
 Microsoft Visual C++ 2010 Express - CHS
-Microsoft Visual C++ 2010 —ßœ∞∞Ê - ºÚÃÂ÷–Œƒ
+Microsoft Visual C++ 2010 Â≠¶‰π†Áâà - ÁÆÄ‰Ωì‰∏≠Êñá
 Microsoft Visual C++ 2012 Redistributable (x64) - 11.0.61030
 Microsoft Visual C++ 2012 Redistributable (x86) - 11.0.61030
 Microsoft Visual C++ 2012 x64 Additional Runtime - 11.0.61030
@@ -79,34 +131,58 @@ Microsoft Visual C++ 2013 x64 Additional Runtime - 12.0.40660
 Microsoft Visual C++ 2013 x64 Minimum Runtime - 12.0.40660
 Microsoft Visual C++ 2013 x86 Additional Runtime - 12.0.40660
 Microsoft Visual C++ 2013 x86 Minimum Runtime - 12.0.40660
-Microsoft Visual C++ 2015-2019 Redistributable (x64) - 14.29.30133
-Microsoft Visual C++ 2015-2019 Redistributable (x86) - 14.28.29914
-Microsoft Visual C++ 2019 X64 Additional Runtime - 14.29.30133
-Microsoft Visual C++ 2019 X64 Minimum Runtime - 14.29.30133
-Microsoft Visual C++ 2019 X86 Additional Runtime - 14.28.29914
-Microsoft Visual C++ 2019 X86 Minimum Runtime - 14.28.29914
+Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.34.31938
+Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.34.31938
+Microsoft Visual C++ 2022 X64 Additional Runtime - 14.34.31938
+Microsoft Visual C++ 2022 X64 Debug Runtime - 14.34.31938
+Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.34.31938
+Microsoft Visual C++ 2022 X86 Additional Runtime - 14.34.31938
+Microsoft Visual C++ 2022 X86 Debug Runtime - 14.34.31938
+Microsoft Visual C++ 2022 X86 Minimum Runtime - 14.34.31938
 Microsoft Visual Studio 2010 Express Prerequisites x64 - CHS
 Microsoft Visual Studio 2010 Tools for Office Runtime (x64)
+Microsoft Visual Studio Installer
+Microsoft Visual Studio Setup Configuration
+Microsoft Visual Studio Setup WMI Provider
 Microsoft Visual Studio Tools for Applications 2015
 Microsoft Visual Studio Tools for Applications 2015 Finalizer
 Microsoft Visual Studio Tools for Applications 2015 x64 Hosting Support
 Microsoft Visual Studio Tools for Applications 2015 x86 Hosting Support
-MuMuƒ£ƒ‚∆˜
+Microsoft Web Deploy 4.0
+Microsoft Windows Desktop Runtime - 6.0.15 (x64)
+Microsoft Windows Desktop Runtime - 6.0.15 (x86)
+Microsoft Windows Desktop Runtime - 7.0.4 (x64)
+Microsoft Windows Desktop Runtime - 7.0.4 (x86)
+Microsoft Windows Desktop Targeting Pack - 6.0.15 (x64)
+Microsoft Windows Desktop Targeting Pack - 6.0.15 (x86)
+Microsoft Windows Desktop Targeting Pack - 7.0.4 (x64)
+Microsoft Windows Desktop Targeting Pack - 7.0.4 (x86)
+Microsoft.NET.Sdk.Android.Manifest-7.0.100 (x64)
+Microsoft.NET.Sdk.MacCatalyst.Manifest-7.0.100 (x64)
+Microsoft.NET.Sdk.Maui.Manifest-7.0.100 (x64)
+Microsoft.NET.Sdk.iOS.Manifest-7.0.100 (x64)
+Microsoft.NET.Sdk.macOS.Manifest-7.0.100 (x64)
+Microsoft.NET.Sdk.tvOS.Manifest-7.0.100 (x64)
+Microsoft.NET.Workload.Emscripten.net6.Manifest (x64)
+Microsoft.NET.Workload.Emscripten.net7.Manifest (x64)
+Microsoft.NET.Workload.Mono.Toolchain.net6.Manifest (x64)
+Microsoft.NET.Workload.Mono.Toolchain.net7.Manifest (x64)
 MySQL Connector C++ 8.0
 MySQL Connector J
-MySQL Connector Net 8.0.16
-MySQL Connector Python v8.0.16 for Python v3.7
+MySQL Connector NET 8.0.32
+MySQL Connector Python v8.0.32
 MySQL Connector/ODBC 8.0
 MySQL Documents 8.0
 MySQL Examples and Samples 8.0
 MySQL Installer - Community
 MySQL Router 8.0
 MySQL Server 8.0
-MySQL Shell 8.0.16
+MySQL Shell 8.0.32
 MySQL Workbench 8.0 CE
-Netron 3.9.7
+Node.js
 OpenAL
 Polyspace R2019a
+PremiumSoft Navicat Premium 15.0
 Python 3.7.0 Add to Path (64-bit)
 Python 3.7.0 Core Interpreter (64-bit)
 Python 3.7.0 Development Libraries (64-bit)
@@ -118,7 +194,8 @@ Python 3.7.0 Test Suite (64-bit)
 Python 3.7.0 Utility Scripts (64-bit)
 Python 3.7.0 pip Bootstrap (64-bit)
 Quick Batch File Compiler 5.2.0.0
-RyzenMasterSDK
+SDK ARM Additions
+SDK ARM Redistributables
 SOLIDWORKS 2022 Chinese Simplified Resources
 SOLIDWORKS 2022 SP0
 SOLIDWORKS CAM 2022 SP0
@@ -149,30 +226,185 @@ Security Update for Microsoft Office 2013 (KB2880463) 64-Bit Edition
 Sentinel Protection Installer 7.6.7
 Steam
 TeighaX 3.09
+Universal CRT Extension SDK
+Universal CRT Headers Libraries and Sources
+Universal CRT Redistributable
+Universal CRT Tools x64
+Universal CRT Tools x86
+Universal General MIDI DLS Extension SDK
 Update for Windows 10 for x64-based Systems (KB5001716)
-VSTOª∑æ≥∞≤◊∞∞¸ ∞Ê±æ 3.0
+VSTOÁéØÂ¢ÉÂÆâË£ÖÂåÖ ÁâàÊú¨ 3.0
 Virtual Com port driver V1.4.0
 Virtual Serial Port Driver 7.2 (Build 7.2.308)
 Visual Basic for Application 7.0.1590
+Visual C++ CRT Headers Package
+Visual C++ Compiler/Tools Premium ARM Base Package
+Visual C++ Compiler/Tools Premium ARM Base Resource Package
+Visual C++ Compiler/Tools Premium X64 ARM Cross Package
+Visual C++ Compiler/Tools Premium X64 ARM Cross Resource Package
+Visual C++ Compiler/Tools Premium X64 Base Package
+Visual C++ Compiler/Tools Premium X64 Base Resource Package
+Visual C++ Compiler/Tools Premium X64 Native Package
+Visual C++ Compiler/Tools Premium X64 Native Resource Package
+Visual C++ Compiler/Tools Premium X64 X86 Cross Package
+Visual C++ Compiler/Tools Premium X64 X86 Cross Resource Package
+Visual C++ Compiler/Tools Premium X86 ARM Cross Package
+Visual C++ Compiler/Tools Premium X86 ARM Cross Resource Package
+Visual C++ Compiler/Tools Premium X86 Base Package
+Visual C++ Compiler/Tools Premium X86 Base Resource Package
+Visual C++ Compiler/Tools Premium X86 Native Package
+Visual C++ Compiler/Tools Premium X86 Native Resource Package
+Visual C++ Compiler/Tools Premium X86 X64 Cross Package
+Visual C++ Compiler/Tools Premium X86 X64 Cross Resource Package
+Visual C++ Compiler/Tools X64 ARM Cross Package
+Visual C++ Compiler/Tools X64 ARM Cross Resource Package
+Visual C++ Compiler/Tools X64 Base Package
+Visual C++ Compiler/Tools X64 Base Resource Package
+Visual C++ Compiler/Tools X64 Native Package
+Visual C++ Compiler/Tools X64 Native Resource Package
+Visual C++ Compiler/Tools X64 X86 Cross Package
+Visual C++ Compiler/Tools X64 X86 Cross Resource Package
+Visual C++ Compiler/Tools X86 ARM Cross Package
+Visual C++ Compiler/Tools X86 ARM Cross Resource Package
+Visual C++ Compiler/Tools X86 Base Package
+Visual C++ Compiler/Tools X86 Base Resource Package
+Visual C++ Compiler/Tools X86 Native Package
+Visual C++ Compiler/Tools X86 Native Resource Package
+Visual C++ Compiler/Tools X86 X64 Cross Package
+Visual C++ Compiler/Tools X86 X64 Cross Resource Package
+Visual C++ Extra Files
+Visual C++ Extra Resource Files
+Visual C++ Library ATL ARM Package
+Visual C++ Library ATL Headers Package
+Visual C++ Library ATL Source Package
+Visual C++ Library ATL X64 Package
+Visual C++ Library ATL X86 Package
+Visual C++ Library CRT ARM Desktop Package
+Visual C++ Library CRT ARM OneCore For Desktop Package
+Visual C++ Library CRT ARM Redist Package
+Visual C++ Library CRT ARM Store Package
+Visual C++ Library CRT ARM64 Appx Package
+Visual C++ Library CRT Appx Package
+Visual C++ Library CRT Appx Resource Package
+Visual C++ Library CRT Desktop Appx Package
+Visual C++ Library CRT Redist Resource Package
+Visual C++ Library CRT Source Package
+Visual C++ Library CRT X64 Desktop Package
+Visual C++ Library CRT X64 OneCore For Desktop Package
+Visual C++ Library CRT X64 Redist Package
+Visual C++ Library CRT X64 Store Package
+Visual C++ Library CRT X86 Desktop Package
+Visual C++ Library CRT X86 OneCore For Desktop Package
+Visual C++ Library CRT X86 Redist Package
+Visual C++ Library CRT X86 Store Package
+Visual C++ Library MFC Headers Package
+Visual C++ Library MFC MBCS Package
+Visual C++ Library MFC Source Package
+Visual C++ Library MFC X64 Package
+Visual C++ Library MFC X86 Package
+Visual C++ Library PGO ARM Package
+Visual C++ Library PGO Headers Package
+Visual C++ Library PGO X64 Package
+Visual C++ Library PGO X86 Package
+Visual C++ MSBuild ARM Package
+Visual C++ MSBuild Base Package
+Visual C++ MSBuild Base Resource Package
+Visual C++ MSBuild X64 Package
+Visual C++ MSBuild X86 Package
+Visual Studio ÁîüÊàêÂ∑•ÂÖ∑ 2022
 WPTx64
+Wallpaper EngineÔºöÂ£ÅÁ∫∏ÂºïÊìé
 WeGame
+Win32DiskImager version 1.0.0
+WinAppDeploy
+WinRAR 6.11 (64-‰Ωç)
+WinRT Intellisense Desktop - Other Languages
+WinRT Intellisense Desktop - en-us
+WinRT Intellisense IoT - Other Languages
+WinRT Intellisense IoT - en-us
+WinRT Intellisense Mobile - en-us
+WinRT Intellisense PPI - Other Languages
+WinRT Intellisense PPI - en-us
+WinRT Intellisense UAP - Other Languages
+WinRT Intellisense UAP - en-us
+Windows App Certification Kit Native Components
+Windows App Certification Kit SupportedApiList x86
+Windows App Certification Kit x64
+Windows Desktop Extension SDK
+Windows Desktop Extension SDK Contracts
 Windows Driver Package - Arduino LLC (www.arduino.cc) Arduino USB Driver (01/04/2013 1.0.0.0)
-Windows «˝∂Ø≥Ã–Ú∞¸ - FTDI CDM Driver Package - Bus/D2XX Driver (08/16/2017 2.12.28)
-Windows «˝∂Ø≥Ã–Ú∞¸ - FTDI CDM Driver Package - VCP Driver (08/16/2017 2.12.28)
-Windows «˝∂Ø≥Ã–Ú∞¸ - KEIL - Tools By ARM (WinUSB) USB  (08/29/2013 1.0.0.3)
-Windows «˝∂Ø≥Ã–Ú∞¸ - OpenMV, LLC (http://www.openmv.io) OpenMV Cam USB Driver (09/09/2016 1.1.1.0)
-Windows «˝∂Ø≥Ã–Ú∞¸ - Qualcomm Atheros Communications (AthBTPort) BluetoothVirtual  (08/23/2013 8.0.0001.0302)
-Windows «˝∂Ø≥Ã–Ú∞¸ - STMicroelectronics (STTub30) USB  (04/26/2018 3.0.6.1)
+Windows Espc Package
+Windows IoT Extension SDK
+Windows IoT Extension SDK Contracts
+Windows Mobile Extension SDK
+Windows Mobile Extension SDK Contracts
+Windows SDK
+Windows SDK ARM Desktop Tools
+Windows SDK AddOn
+Windows SDK Desktop Headers arm
+Windows SDK Desktop Headers arm64
+Windows SDK Desktop Headers x64
+Windows SDK Desktop Headers x86
+Windows SDK Desktop Libs arm
+Windows SDK Desktop Libs arm64
+Windows SDK Desktop Libs x64
+Windows SDK Desktop Libs x86
+Windows SDK Desktop Tools arm64
+Windows SDK Desktop Tools x64
+Windows SDK Desktop Tools x86
+Windows SDK DirectX x64 Remote
+Windows SDK DirectX x86 Remote
+Windows SDK EULA
+Windows SDK Facade Windows WinMD Versioned
+Windows SDK Modern Non-Versioned Developer Tools
+Windows SDK Modern Versioned Developer Tools
+Windows SDK Redistributables
+Windows SDK Signing Tools
+Windows SDK for Windows Store Apps
+Windows SDK for Windows Store Apps Contracts
+Windows SDK for Windows Store Apps DirectX x86 Remote
+Windows SDK for Windows Store Apps Headers
+Windows SDK for Windows Store Apps Libs
+Windows SDK for Windows Store Apps Metadata
+Windows SDK for Windows Store Apps Tools
+Windows SDK for Windows Store Managed Apps Libs
+Windows Software Development Kit - Windows 10.0.22000.832
+Windows Team Extension SDK
+Windows Team Extension SDK Contracts
+Windows È©±Âä®Á®ãÂ∫èÂåÖ - FTDI CDM Driver Package - Bus/D2XX Driver (08/16/2017 2.12.28)
+Windows È©±Âä®Á®ãÂ∫èÂåÖ - FTDI CDM Driver Package - VCP Driver (08/16/2017 2.12.28)
+Windows È©±Âä®Á®ãÂ∫èÂåÖ - KEIL - Tools By ARM (WinUSB) USB  (08/29/2013 1.0.0.3)
+Windows È©±Âä®Á®ãÂ∫èÂåÖ - OpenMV, LLC (http://www.openmv.io) OpenMV Cam USB Driver (09/09/2016 1.1.1.0)
+Windows È©±Âä®Á®ãÂ∫èÂåÖ - Qualcomm Atheros Communications (AthBTPort) BluetoothVirtual  (08/23/2013 8.0.0001.0302)
+Windows È©±Âä®Á®ãÂ∫èÂåÖ - STMicroelectronics (STTub30) USB  (04/26/2018 3.0.6.1)
+Windows È©±Âä®Á®ãÂ∫èÂåÖ - Silicon Laboratories Inc. (silabser) Ports  (05/23/2018 6.7.6.2130)
 ffdshow [rev 3154] [2009-12-09]
 msp430 tools
-∑÷«¯÷˙ ÷ 9.8.0
-œÚ»’ø˚
-Œ¢–≈
-À—π∑ ‰»Î∑® 11.6.0’˝ Ω∞Ê
-À—π∑ ‰»Î∑®∆§∑Ù±‡º≠∆˜ 6.6
-∑Ω∑Ω∏Ò◊”(WPS∞Ê) ∞Ê±æ 3.6.8.4
-µÁƒ‘π‹º“
-∞Ÿ∂»Õ¯≈Ã
-Õ¯“◊‘∆“Ù¿÷
-Ã⁄—∂QQ
-«˝∂ØÃÏ π
+vcpp_crt.redist.clickonce
+vs_CoreEditorFonts
+vs_FileTracker_Singleton
+vs_communitymsires
+vs_communitysharedmsi
+vs_communityx64msi
+vs_filehandler_amd64
+vs_filehandler_x86
+vs_minshellinteropmsi
+vs_minshellinteropsharedmsi
+vs_minshellmsi
+vs_minshellmsires
+vs_minshellsharedmsi
+vs_vswebprotocolselectormsi
+vs_vswebprotocolselectormsires
+windows_toolscorepkg
+ÂêëÊó•Ëëµ
+Â∞èÈªëÁõíÂä†ÈÄüÂô® 1.1.21
+ÂæÆ‰ø°
+ÊêúÁãóËæìÂÖ•Ê≥ï 13.3.0Ê≠£ÂºèÁâà
+ÊêúÁãóËæìÂÖ•Ê≥ïÁöÆËÇ§ÁºñËæëÂô® 6.6
+ÊñπÊñπÊ†ºÂ≠ê(WPSÁâà) ÁâàÊú¨ 3.6.8.4
+ÁîµËÑëÁÆ°ÂÆ∂
+ÁôæÂ∫¶ÁΩëÁõò
+ÁΩëÊòì‰∫ëÈü≥‰πê
+ËÖæËÆØQQ
+ËÖæËÆØÊ°åÈù¢Êï¥ÁêÜ
+È©±Âä®Â§©‰Ωø

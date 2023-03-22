@@ -1,0 +1,133 @@
+第一段：
+
+   /B  /B N /A S /
+
+(VND)   /  H /(BMS)  /  G /
+(CBMS)  /  G /(CNA) M /B C /
+(VN)   /  D /(BMS)  /  G /
+(CBMS)  /  Q /(NADJ) G /(XBD) S /
+
+(VND)  /  H /(BMS)  /  G /
+(CBMS)  /  G /(CNA) M /A S /
+(VNAD) G /H Q /(BMSW)  /Q J /
+(NAD) Q /J G /(BMS)  /(XB)  /
+
+(VD)  /(ZN) H /S B /(XM) G /
+(CS)  /(BM) G /A (NM) /(XB) C /
+(VN)  /(ZV) D /S B /(XM) G /
+(CS)  /(BM) Q /J (NG) /(XBD) S /
+
+(VD)  /(ZN) H /S B /(XM) G /
+(CS)  /(BM) G /A (NM) /(XBA) S /
+(VD) H /(ZN) S /G B /(XMD) H /
+N G /(CAH) Q /J (BG) /(XMS)  /
+
+第二段：
+
+(VNS)  /A   /S   /A   /
+(BMD)  /S   /D   /S   /
+(CMF)  /D   /F   /D   /
+(CNS) A /S D /(XBD)  /     /
+
+(VNH)  /S    /H    /S    /
+(VMH)  /S    /H    /S    /
+(CMJ)  /D    /J    /D    /
+(NAD)  /Q    /(BSJ) G /D    /
+
+(XNH) G /H (CMG) /  Q /J (VAG) /
+   G /H (NAFW) /     /     /
+
+第三段（副歌）：
+
+  E /W Q /
+
+(ZVW)   /(NAQ)   /W (XB) /(MSQ) W /
+(CB) E /(MSH) G /H (CN) /(BS) G /
+(ZVH)  /(NA) E /W (XB) /(MSQ) J /
+(CN) Q /(ADW) R /E (CNE) /(XBW) Q /
+
+(ZVW)  /(NAQ)  /W (XB) /(MSQ) W /
+(CB) E /(MSH) G /H (CN) /(BS) G /
+(ZVH)  /(NAE) W /  (XBT) /(MS) E /
+(CN) Q /(AD) E /W (CN) /(XBE)  /
+
+(ZVW)  /(NAQ)  /W (XB) /(MSQ) W /
+(CB) E /(MSH) G /H (CN) /(BS) G /
+(ZVH)  /(NA) E /W (XB) /(MSQ) J /
+(CN) Q /(ADW) R /E (CNE) /(XBW) Q /
+
+(ZVW)  /(NAQ)  /W (XB) /(MSQ) W /
+(CB) E /(MSH) G /H (CN) /(BS) G /
+(ZVH)  /(NAE) W /  (XBT) /(MS) E /
+(CN) Q /(AD) E /W (CN) /(XB)   /
+
+间奏：
+
+(ZVN) GH/Q E /W T /(XBM) E /
+(ZCN) G /H E /WEWQ /(XBMJ) G /
+(ZVN) GJ/W E /W T /(XBM) E /
+(ZCN) Y /W Q /  Q /(XBMW) G /
+
+(ZVNE) GH /Q E /W T /(XBM) E /
+(ZCN) A /M G /D Q /(XBMJ) D /
+(ZVN) GH/Q E /W T /(XBM) Y /
+(ZCN) E /  W /  T /(XBM) Q /
+
+(ZVNS)  /  D /     /(XBMQ) /
+(ZCNJ)  /  G /     /(XBMD)  /
+(ZVN) H /Q E /W T /(XBM) E /
+(ZCN) A /M G /D Q /(XBMJ) D /
+
+(NADH)  /N (BMSJ)  /  G /(VNAQ)  /
+  (VNAE) /     /(ZVNH) D /(ZVNG) A /
+
+(CAG)  /(CAG)  /(CAG)  /(CAG)  /
+(VAFG)  /(VAFG)  /(VAFG)  /(VAFG)  /
+(BSH)  /(BSH)  /(BSH)  /(BSH)  /
+(MDJ)  /(MDJ)  /(MC) E /W Q /
+
+第四段重复副歌：
+
+  E /W Q /
+
+(ZVW)  /(NAQ)  /W (XB) /(MSQ) W /
+(CB) E /(MSH) G /H (CN) /(BS) G /
+(ZVH)  /(NA) E /W (XB) /(MSQ) J /
+(CN) Q /(ADW) R /E (CNE) /(XBW) Q /
+
+(ZVW)  /(NAQ)  /W (XB) /(MSQ) W /
+(CB) E /(MSH) G /H (CN) /(BS) G /
+(ZVH)  /(NAE) W /  (XBT) /(MS) E /
+(CN) Q /(AD) E /W (CN) /(XBE)  /
+
+(ZVW)  /(NAQ)  /W (XB) /(MSQ) W /
+(CB) E /(MSH) G /H (CN) /(BS) G /
+(ZVH)  /(NA) E /W (XB) /(MSQ) J /
+(CN) Q /(ADW) R /E (CNE) /(XBW) Q /
+
+(ZVW)  /(NAQ)  /W (XB) /(MSQ) W /
+(CB) E /(MSH) G /H (CN) /(BS) G /
+(ZVH)  /(NAE) W / (XBT) /(MS) E /
+(CN) Q /(AD) E /W (CN) /(XB)  /
+
+(ZVW)  /(NAQ)  /W (XB) /(MSQ) W /
+(CB) T /(MS) Q /  (CNJ) /(BSG) D /
+(ZVH)  /(NA)  /Q (XB) /(MS)  /
+(CNW)  /(AD)  /E (CN) /(XB)  /
+
+(ZVW)  /(NAQ)  /W (XB) /(MSQ) W /
+(CB) T /(MS) Q /  (CNJ) /(BSQ) W /
+(CBE)  /(MS)  /T (CN) /(BS)  /
+(CNY)  / B /B N /(XBA) S /
+
+结尾：
+
+(VND)  /  H /(BMS)  /  G /
+(CBMS)  /  G /(CNA) M /B C /
+(VN)  /  D /(BMS)  /  G /
+(CBMS)  /  Q /(NADJ) G /(XBD) S /
+
+(VND)  /  H /(BMS)  /  G /
+(CBMS)  /  G /(CNA) M /A S /
+(VNAD)  /  S /(BMS)   /D H /
+(NAD) G /H Q /J G /S   /
