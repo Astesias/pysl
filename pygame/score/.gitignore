@@ -2,4 +2,4 @@ exe.ico
 __pycache__
 build
 dist
-.spec
+*.spec
