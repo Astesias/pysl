@@ -172,6 +172,7 @@ if __name__ == '__main__':
     
     
     if is_admin():
+        print('################################\nCreate by ysl ,Copyright 2023 ©\n')
         while 1:
             cfg=setcfg()
             if not cfg:
