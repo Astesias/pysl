@@ -52,7 +52,7 @@ class AutoScore:
     def iter(self):
         return self._iter
     def save(self,dst,type=CLASS_TYPE):
-        with open(dst,'w') as fp:
+        with open(dst,'w',encoding='utf8') as fp:
             for _ in self.iter():
                 fp
                 pass
@@ -126,7 +126,7 @@ class AutoScore:
         return dp
 
     def __preload(self,type):
-        with open(self.score_path) as fp:
+        with open(self.score_path,encoding='utf8') as fp:
             data=fp.read()  
         
         ctrl_str=self.__preload_ctrlchar(self.score_path,type)
@@ -170,40 +170,44 @@ class AutoScore:
 if __name__ == '__main__':
     # print(*zip(list(range(len(os.listdir('./scoretxt')))),os.listdir('./scoretxt')),sep='\n')
     
-    
-    if is_admin():
-        print('################################\nCreate by ysl ,Copyright 2023 ©\n')
-        while 1:
-            cfg=setcfg()
-            if not cfg:
-                print('添加乐谱后再打开')
-                time.sleep(5)
-                break
-            print('_______________________________')
-            for i,j in enumerate(os.listdir('./scoretxt')):
-                print(f'{i+1}. {j}')
-            print('_______________________________')
+    try:
+        if is_admin():
+            print('################################\nCreate by ysl ,Copyright 2023 ©\n')
+            while 1:
+                cfg=setcfg()
+                if not cfg:
+                    print('添加乐谱后再打开')
+                    time.sleep(5)
+                    break
+                print('_______________________________')
+                for i,j in enumerate(os.listdir('./scoretxt')):
+                    print(f'{i+1}. {j}')
+                print('_______________________________')
+                    
+                index=int(input('演奏曲目:'))
+                sc=os.listdir('./scoretxt')[index-1]
                 
-            index=int(input('演奏曲目:'))
-            sc=os.listdir('./scoretxt')[index-1]
-            
-            print('\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
-            print(f'准备演奏 {sc}')
-            type=cfg[sc]['type']
-            print('乐谱类型为 '+('键盘(1)' if type==1 else '手机(0)'))
-            bpm=cfg[sc]['bpm']
-            if not bpm:
-                print('bmp未设置，默认为192')
-            else:
-                print(f'bpm{bpm}')
-            dd=AutoScore(sc,type=type)
-            print('按home键开始演奏')
-            print('<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<')
-            
-            dd.play(mode=AutoScore.AUTO_MODE,bpm=bpm)
-
-    else:
-        admin_monitor(__file__)
+                print('\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
+                print(f'准备演奏 {sc}')
+                type=cfg[sc]['type']
+                print('乐谱类型为 '+('键盘(1)' if type==1 else '手机(0)'))
+                bpm=cfg[sc]['bpm']
+                if not bpm:
+                    print('bmp未设置，默认为192')
+                else:
+                    print(f'bpm{bpm}')
+                dd=AutoScore(sc,type=type)
+                print('按home键开始演奏')
+                print('<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<')
+                
+                dd.play(mode=AutoScore.AUTO_MODE,bpm=bpm)
+    
+        else:
+            admin_monitor(__file__)
+    except:
+        import traceback
+        with open('log.txt','w',encoding='utf8') as fp:
+            fp.write(traceback.format_exc())
 
 '''
 class

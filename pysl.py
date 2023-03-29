@@ -24,6 +24,7 @@ import threading
 import traceback
 import numpy as np
 from functools import wraps
+from contextlib import contextmanager
 
 #import pysl
 # from pysl import *
@@ -439,9 +440,50 @@ class Timer():
             return True
         else:
             return False
+  
+class ppt_access():
+
+    def __init__(self):
+        from pptx import Presentation
+        
+        self.ppt=Presentation()
+        self.slide_num=0
+        self.wid=10
+        self.hei=7.5
+    def add_slide(self,layout=6):
+        self.slide_num+=1
+        layout=self.ppt.slide_layouts[layout]
+        slide=self.ppt.slides.add_slide(layout)
+        self.slide=slide
+    def add_textbox(self,text,left,top,width=5,height=0.25,ft=10):
+        from pptx.util import Inches,Pt
+        assert 0<left<self.wid,0<top<self.hei
+        if left+width>=self.wid:
+            width=self.wid-left
+            
+        left=Inches(left)
+        top=Inches(top)
+        width=Inches(width)
+        height_=Inches(height)# 4:3
+        textbox=self.slide.shapes.add_textbox(left,top,width,height_)
+        
+        tf=textbox.text_frame
+        para=tf.paragraphs[0]
+        para.text=text
+        font=para.font
+        font.name='微软雅黑'    # 字体类型
+        font.size=Pt(ft if ft<25 else 25)    # 大小
+        font.underline=False    # 下划线
+    def save(self,name='auto_ppt.pptx'):
+        if os.path.exists(name):
+            os.remove(name)
+        self.ppt.save(name)
+        
     
 ###################################################################################################### 
   
+
+# class config mutiprocess
 
 def admin_monitor(file):
     import ctypes
@@ -506,6 +548,14 @@ def battery():
 #     print(re)
 #     return list(map(hex,re[1:]))
     
+def clipboard(text):
+    import win32clipboard as wcb
+    import win32con as wc
+    wcb.OpenClipboard()
+    wcb.EmptyClipboard()
+    wcb.SetClipboardData(wc.CF_TEXT,text.encode("utf8"))
+    wcb.CloseClipboard()
+
 def c_b(c):
     if c:
         print(0/0)
@@ -1070,6 +1120,18 @@ def mmap(func_or_method,ite,arg=[],kw={}):
         for i in ite:
             r.append( func_or_method(i,*arg,**kw) )
         return r
+
+
+@contextmanager
+def mtue_all():
+    with open(os.devnull, "w") as devnull:
+        old_stdout = sys.stdout
+        sys.stdout = devnull
+        try:  
+            yield
+        finally:
+            sys.stdout = old_stdout
+
 
 def newpath(path,isfile=False):
     assert path[0]!='/'

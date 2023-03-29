@@ -1,8 +1,8 @@
 # _*_ coding:utf-8 _*_
 import wx
 from pysl import dir_search,flatten,backref_dict,admin_monitor,is_admin
-from man_core import AutoScore as asc
-from man_core import map_dict
+from oplayer import AutoScore as asc
+from oplayer import map_dict
 import PyHook3,queue,pythoncom
 import win32api
 
@@ -168,7 +168,7 @@ def score_filter(item):
         for __ in _:
             if __!='#':
                 index=map_dict.backref(__)
-                print(index,__,'xxx')
+                # print(index,__,'xxx')
                 if index:
                     res[0 if index[0]=='+' else (-1 if index[0]=='-' else 1)].append(__.upper()) 
         re.append(res)  

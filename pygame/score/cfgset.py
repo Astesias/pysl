@@ -12,7 +12,7 @@ def setcfg():
     ts=os.listdir('./scoretxt')
     cfg={}
     for _ in ts:
-        with open(os.path.join('./scoretxt',_)) as fp:
+        with open(os.path.join('./scoretxt',_),encoding='utf8') as fp:
             d=fp.read()
             tp=1 if (d.count('W') >= d.count('+2')) else 0
         cfg[_]={'bpm':None,'type':tp}
@@ -20,10 +20,10 @@ def setcfg():
         print('未检测到乐谱')
     
     if not os.path.exists('cfg.json'):
-        with open('cfg.json','w') as fp:
+        with open('cfg.json','w',encoding='utf8') as fp:
             json.dump(cfg,fp,ensure_ascii=False,indent=2)
     else:
-        with open('cfg.json') as fp:
+        with open('cfg.json',encoding='utf8') as fp:
             newcfg=json.load(fp)
         for i in list(newcfg.keys()):
             if i not in list(cfg.keys()):
@@ -31,7 +31,7 @@ def setcfg():
             
         cfg.update(newcfg)
         
-        with open('cfg.json','w') as fp:
+        with open('cfg.json','w',encoding='utf8') as fp:
             json.dump(cfg,fp,ensure_ascii=False,indent=2)
 
     return cfg

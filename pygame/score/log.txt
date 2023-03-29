@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "D:\Desktop\.py\pygame\score\oplayer.py", line 175, in <module>
+    0/0
+ZeroDivisionError: division by zero
