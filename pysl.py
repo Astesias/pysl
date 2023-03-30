@@ -174,6 +174,36 @@ class backref_dict(dict):
                 re.append(i)
         return re
 
+class Config():
+    def __init__(self,path):
+        self.path = path
+        if os.path.exists(path):
+            with open(path) as fp:
+                self.data=json.load(fp)
+        else:
+            self.data={}
+
+    def add(self,item_k,item_v):
+        self.data[item_k]=item_v
+    
+    def save(self,path=None):
+        if not path:
+            path=self.path
+        with open(path,'w') as fp:
+            json.dump(self.data,fp,ensure_ascii=False,indent=2)
+        
+    def __enter__(self):
+        return self
+    def __exit__(self, type, value, trace):
+        self.save()
+    def __call__(self,key):
+        return self.data[key]
+    def __del__(self):
+        try:
+            self.save()
+        except:
+            pass
+
 class dir_enter:
     def __init__(self,dir_=None):
         if not dir_:
@@ -481,9 +511,6 @@ class ppt_access():
         
     
 ###################################################################################################### 
-  
-
-# class config mutiprocess
 
 def admin_monitor(file):
     import ctypes
@@ -1767,6 +1794,10 @@ elif __name__=='__main__':
 
 # old=sys.stdout
 # sys.stdout = codecs.lookup('iso8859-1')[-1]( sys.stdout)
+
+# ensure_ascii=False,indent=2
+
+
 
 
 # 		p2 v p1
