@@ -211,6 +211,9 @@ class Config():
         with open(path, 'w') as fp:
             json.dump(self.data, fp, ensure_ascii=False, indent=2)
 
+    def __getitem__(self,ind):
+        return self(ind)
+
     def __enter__(self):
         return self
 
@@ -676,6 +679,7 @@ def bgr2rgb(t):
 def battery():
     import psutil
     a, b, c = psutil.sensors_battery()
+    # print(a,b,c)
     print(f'当前电量: {a}% 预计可用 {b//60}分钟 ')
 
 # TODO
@@ -708,14 +712,17 @@ def c_b(c):
         print(0/0)
 
 
-def cmd(command, log=False):
+def cmd(command):
     import subprocess
-    cmd = subprocess.getstatusoutput(command)
-    if log:
-        print(('Success' if not cmd[0] else 'Fail') + ' Command:\n   '+command)
-        print(cmd[1].replace('Active code page: 65001', ''))
-    if cmd[0] and not log:
-        raise Exception(f'cmd order {command} failed')
+    cmd = list(subprocess.getstatusoutput(command))
+    # print(('Success' if not cmd[0] else 'Fail') + ' Command:\n   '+command)
+    cmd[1]=cmd[1].replace('Active code page: 65001', '')
+    # print(cmd)
+    if cmd[0]==0:
+        return cmd[1]
+    else:
+        print(f'Command \'{command}\' failed')
+
 
 
 def cfmt_str(s):
@@ -1328,7 +1335,7 @@ def make_header_json(name):
 
 
 @contextmanager
-def mtue_all():
+def mute_all():
     with open(os.devnull, "w") as devnull:
         old_stdout = sys.stdout
         sys.stdout = devnull
@@ -1833,7 +1840,7 @@ def zipath(zipfile_path, Date_file):
     print('zipfile saved at', zipfile_path)
 
 
-def ziposort(xl, yl):
+def zipsort(xl, yl):
     z = list(zip(xl, yl))
     z.sort(key=lambda x: x[0])
     xe = [z[i][0] for i in range(len(z))]
