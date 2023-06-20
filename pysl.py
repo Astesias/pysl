@@ -195,7 +195,7 @@ class Config():
 
     def add(self, item_k, item_v=None):
         assert self.base or item_v
-        if item_v:
+        if item_v!=None:
             self.data[item_k] = item_v
             self.__setattr__(item_k, item_v)
         else:
