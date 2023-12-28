@@ -907,49 +907,51 @@ class response_wrapper():
 class chained_request():
     def __init__(self,url):
         self._url = url
-        self.headers = None
-        self.payload = None
+        self._headers = None
+        self._payload = None
         
     def quote(self,format_url_args):
         self._url = self._url.format(*list(map(quote, format_url_args)))
         return self
     
+    def payload(self,data):
+        self._payload = data
+        return self
+    
     def mutipayload(self,fields,boundary):
         custom_data = MultipartEncoder(
             fields=fields, boundary=boundary)
-        if not self.headers:
-            self.headers = {}
-        self.headers['Content-Type'] = custom_data.content_type
-        self.payload = custom_data
+        if not self._headers:
+            self._headers = {}
+        self._headers['Content-Type'] = custom_data.content_type
+        self._payload = custom_data
         return self
-            
-    def get(self,headers=None,stream=False):
-        if isinstance(headers,str):
-            self.headers = self.read_header(headers)
-        elif headers:
-            self.headers = headers
+    
+    def get(self,stream=False):
         return self._request('GET',stream = stream)
     
-    def post(self,headers=None,stream=False):
-        if isinstance(headers,str):
-            self.headers = self.read_header(headers)
-        elif headers:
-            self.headers = headers
+    def post(self,payload=None,stream=False):
+        if payload:
+            self._payload = payload
         return self._request('POST',stream = stream)
     
-    def read_header(self,path):
-        return json.load(open(path))
+    def headers(self,path_or_dict):
+        if isinstance(path_or_dict,str):
+            self._headers = json.load(open(path_or_dict))
+        else:
+            self._headers = path_or_dict
+        return self
     
     def _request(self,method,stream=False):
         if method=='POST':
             response = requests.post(self._url,
-                                     headers=self.headers,
-                                     data=self.payload,
+                                     headers=self._headers,
+                                     data=json.dumps(self._payload),
                                      stream = stream
                                      )
         elif method=='GET':
             response = requests.get(self._url,
-                                     headers=self.headers,
+                                     headers=self._headers,
                                      stream = stream
                                      )
         return response_wrapper(response)
