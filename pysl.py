@@ -6,9 +6,58 @@ Created on Mon Apr 25 20:00:26 2022
 
 useful functions ysl created
 """
+
 from __future__ import division
 from __future__ import print_function
 from __future__ import absolute_import
+import types
+
+class LazyLoader(types.ModuleType):
+
+    """Lazily import a module, mainly to avoid pulling in large dependencies.
+
+    `contrib`, and `ffmpeg` are examples of modules that are large and not always
+    needed, and this allows them to only be loaded when they are used.
+    """
+
+    # The lint error here is incorrect.
+    def __init__(self, local_name, parent_module_globals, name):  # pylint: disable=super-on-old-class
+
+        self._local_name = local_name
+        self._parent_module_globals = parent_module_globals
+
+        super(LazyLoader, self).__init__(name)
+
+    def _load(self):
+        import importlib
+        # Import the target module and insert it into the parent's namespace
+        module = importlib.import_module(self.__name__)
+        self._parent_module_globals[self._local_name] = module
+
+        # Update this object's dict so that if someone keeps a reference to the
+        #   LazyLoader, lookups are efficient (__getattr__ is only called on lookups
+        #   that fail).
+        self.__dict__.update(module.__dict__)
+
+        return module
+
+    def __getattr__(self, item):
+        module = self._load()
+        return getattr(module, item)
+
+    def __dir__(self):
+        module = self._load()
+        return dir(module)
+
+def lazyimport(module, asnmae=None):
+    if not asnmae:
+        asnmae = module
+    return LazyLoader(asnmae, globals(), module)
+    # from pysl import lazyimport
+    # ti=lazyimport('time','ti')
+
+# LazyLoader("chatglm_6B_int4", globals(), "IO_output.text.nlp.chatglm_6B_int4")
+# lazyimport('torch')
 
 import os
 import re
@@ -16,7 +65,7 @@ import cv2
 import sys
 import json
 import time
-import types
+
 import shutil
 import random
 import logging
@@ -25,6 +74,13 @@ import traceback
 import numpy as np
 from functools import wraps
 from contextlib import contextmanager
+
+import requests
+from urllib.parse import quote
+from bs4 import BeautifulSoup as bs
+from requests_toolbelt import MultipartEncoder
+
+
 
 #import pysl
 # from pysl import *
@@ -819,6 +875,74 @@ def cut_video(i_video, o_video, skip, expand_name='.jpg'):
             break
     print('cut_video done')
 
+class response_wrapper():
+    def __init__(self,response):
+        self.r = response
+    def response(self):
+        return self.r
+    def byte(self):
+        return self.r.content
+    def str(self,encoding='utf8'):
+        return str(self.byte(), encoding=encoding)
+    def json(self,*args,**kws):
+        return json.loads(self.str(*args,**kws))
+    def bs(self,*args,**kws):
+        return bs(self.str(*args,**kws), features='lxml')
+    def byte_iter(self,chunk_size=1024):
+        return self.r.iter_content(chunk_size=chunk_size)
+    def __repr__(self):
+        return self.r.__repr__()
+    
+
+class chained_request():
+    def __init__(self,url):
+        self._url = url
+        self.headers = None
+        self.payload = None
+        
+    def quote(self,format_url_args):
+        self._url = self._url.format(*list(map(quote, format_url_args)))
+        return self
+    
+    def mutipayload(self,fields,boundary):
+        custom_data = MultipartEncoder(
+            fields=fields, boundary=boundary)
+        if not self.headers:
+            self.headers = {}
+        self.headers['Content-Type'] = custom_data.content_type
+        self.payload = custom_data
+        return self
+            
+    def get(self,headers=None,stream=False):
+        if isinstance(headers,str):
+            self.headers = self.read_header(headers)
+        elif headers:
+            self.headers = headers
+        return self._request('GET',stream = stream)
+    
+    def post(self,headers=None,stream=False):
+        if isinstance(headers,str):
+            self.headers = self.read_header(headers)
+        elif headers:
+            self.headers = headers
+        return self._request('POST',stream = stream)
+    
+    def read_header(self,path):
+        return json.load(open(path))
+    
+    def _request(self,method,stream=False):
+        if method=='POST':
+            response = requests.post(self._url,
+                                     headers=self.headers,
+                                     data=self.payload,
+                                     stream = stream
+                                     )
+        elif method=='GET':
+            response = requests.get(self._url,
+                                     headers=self.headers,
+                                     stream = stream
+                                     )
+        return response_wrapper(response)
 
 def D(x):  # 方差
     d = 0
@@ -1878,56 +2002,13 @@ def timety_(func):
     return wrapper
 
 
-class LazyLoader(types.ModuleType):
 
-    """Lazily import a module, mainly to avoid pulling in large dependencies.
-
-    `contrib`, and `ffmpeg` are examples of modules that are large and not always
-    needed, and this allows them to only be loaded when they are used.
-    """
-
-    # The lint error here is incorrect.
-    def __init__(self, local_name, parent_module_globals, name):  # pylint: disable=super-on-old-class
-
-        self._local_name = local_name
-        self._parent_module_globals = parent_module_globals
-
-        super(LazyLoader, self).__init__(name)
-
-    def _load(self):
-        import importlib
-        # Import the target module and insert it into the parent's namespace
-        module = importlib.import_module(self.__name__)
-        self._parent_module_globals[self._local_name] = module
-
-        # Update this object's dict so that if someone keeps a reference to the
-        #   LazyLoader, lookups are efficient (__getattr__ is only called on lookups
-        #   that fail).
-        self.__dict__.update(module.__dict__)
-
-        return module
-
-    def __getattr__(self, item):
-        module = self._load()
-        return getattr(module, item)
-
-    def __dir__(self):
-        module = self._load()
-        return dir(module)
-
-
-def lazyimport(module, asnmae=None):
-    if not asnmae:
-        asnmae = module
-    return LazyLoader(asnmae, globals(), module)
-    # from pysl import lazyimport
-    # ti=lazyimport('time','ti')
 
 
 ######################################################################################################
 
 if os.name=='nt':
-    pysl_lib = 'D:\Anconda\Lib\site-packages'
+    pysl_lib = 'C:\ProgramData\Anaconda\Lib\site-packages'
 else:
     pysl_lib = '/usr/lib/python3/dist-packages/'
     
@@ -1955,7 +2036,10 @@ elif __name__ == '__main__':
     try:
         assert get_file_same(os.path.join(pysl_lib, 'pysl.py'), './pysl.py')
     except:
-        cmd(f'cp {__file__} {pysl_lib}')
+        if os.name == 'nt':
+            cmd(f'copy {__file__} {pysl_lib}')
+        else:
+            cmd(f'cp {__file__} {pysl_lib}')
         cfmt_print('@^Hb@Update to pysl module')
 
 
