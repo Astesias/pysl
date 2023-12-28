@@ -236,9 +236,8 @@ class backref_dict(dict):
                 re.append(i)
         return re
 
-
 class Config():
-    def __init__(self, path, base=None):
+    def __init__(self, path='./config_temp.json', base=None):
         self.path = path
         self.base = base
         if os.path.exists(path):
@@ -248,6 +247,17 @@ class Config():
                 self.__setattr__(k, v)
         else:
             self.data = {}
+
+    def load(self):
+        if os.path.exists(self.path):
+            with open(self.path) as fp:
+                self.data = json.load(fp)
+            for k, v in self.data.items():
+                self.__setattr__(k, v)
+    
+    def add_base(self):
+        for k, v in self.base.items():
+            self.data[k]=v
 
     def add(self, item_k, item_v=None):
         assert self.base or item_v
