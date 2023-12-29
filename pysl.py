@@ -1877,6 +1877,8 @@ class share_variable():
         assert 'PYSHARE' in os.environ,'PYSHARE not in environment'
     def set(self,string):
         os.environ['PYSHARE'] = string
+    def js_set(self,dict_):
+        os.environ['PYSHARE'] = json.dumps(dict_)
     def __str__(self):
         return os.environ['PYSHARE']
     def __repr__(self):
