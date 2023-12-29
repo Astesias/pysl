@@ -1872,6 +1872,24 @@ def sum_lll(alist):  # 列总和
         sumlist.append(suml)
     return sumlist
 
+class share_variable():
+    def __init__(self):
+        assert 'PYSHARE' in os.environ,'PYSHARE not in environment'
+    def set(self,string):
+        os.environ['PYSHARE'] = string
+    def __str__(self):
+        return os.environ['PYSHARE']
+    def __repr__(self):
+        return os.environ['PYSHARE']
+    def __int__(self):
+        return int(self.__str__())
+    def __float__(self):
+        return float(self.__str__())
+    def js(self):
+        return json.loads(self.__str__())
+    def __del__(self):
+        os.environ['PYSHARE'] = 'NULL'
+
 
 def transparent_png(path, xs, ys, new_name='transparent'):
     img = cv2_imread(path)
@@ -2020,7 +2038,7 @@ def timety_(func):
 ######################################################################################################
 
 if os.name=='nt':
-    pysl_lib = 'C:\ProgramData\Anaconda\Lib\site-packages'
+    pysl_lib = [r'C:\ProgramData\Anaconda\Lib\site-packages',r'C:\ProgramData\Anaconda\envs\vtuber\Lib\site-packages'][0]
 else:
     pysl_lib = '/usr/lib/python3/dist-packages/'
     
