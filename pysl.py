@@ -646,7 +646,20 @@ class Timer():
             return True
         else:
             return False
+        
+class Timer_12():
+    def __init__(self, t1,t2):
+        self.t1 = t1
+        self.t2 = t2
+        self.flag = False
+        self.start = 0
 
+    def T(self):
+        if time.time()-self.start < (self.t1 if self.flag else self.t2):
+            return self.flag
+        else:
+            self.flag = not self.flag
+            self.start = time.time()
 
 class ppt_access():
 
@@ -2002,23 +2015,6 @@ def zipsort(xl, yl):
     xe = [z[i][0] for i in range(len(z))]
     ye = [z[i][1] for i in range(len(z))]
     return xe, ye
-
-
-def moveout():
-    print(__name__)
-    pass
-
-
-def xml_read():
-    pass
-
-
-def json_read():
-    pass
-
-
-def yaml_read():
-    pass
 
 
 ######################################################################################################
