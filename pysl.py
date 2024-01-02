@@ -653,8 +653,12 @@ class Timer_12():
         self.t2 = t2
         self.flag = False
         self.start = 0
+        self.first_call = True
 
     def T(self):
+        if self.first_call:
+            self.first_call = False
+            return True
         if time.time()-self.start < (self.t1 if self.flag else self.t2):
             return self.flag
         else:
