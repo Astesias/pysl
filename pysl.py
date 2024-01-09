@@ -1467,6 +1467,11 @@ def mmap(func_or_method, ite, arg=[], kw={}):
             r.append(func_or_method(i, *arg, **kw))
         return r
 
+def make_dpi_aware():
+    import platform,ctypes
+    if int(platform.release()) >= 8:
+        ctypes.windll.shcore.SetProcessDpiAwareness(True)
+
 def make_header_json(name):
     import re
     with open('temp.json') as fp:
@@ -2033,7 +2038,14 @@ def timety_(func):
         return r
     return wrapper
 
-
+def async_timety_(func):
+    @wraps(func)
+    async def wrapper(*arg, **kw):
+        t = time.time()
+        r = await func(*arg, **kw)
+        print('function {} take {}s'.format(func.__name__, time.time()-t))
+        return r
+    return wrapper
 
 
 
