@@ -76,6 +76,7 @@ from functools import wraps
 from contextlib import contextmanager
 
 import requests
+import websocket
 from urllib.parse import quote
 from bs4 import BeautifulSoup as bs
 from requests_toolbelt import MultipartEncoder
@@ -926,6 +927,7 @@ class chained_request():
         self._url = url
         self._headers = None
         self._payload = None
+        self._form = False
         
     def quote(self,format_url_args):
         self._url = self._url.format(*list(map(quote, format_url_args)))
@@ -933,6 +935,10 @@ class chained_request():
     
     def payload(self,data):
         self._payload = data
+        return self
+    
+    def form(self):
+        self._form = True
         return self
     
     def mutipayload(self,fields,boundary):
@@ -963,7 +969,7 @@ class chained_request():
         if method=='POST':
             response = requests.post(self._url,
                                      headers=self._headers,
-                                     data=json.dumps(self._payload),
+                                     data=self._payload if self._form else json.dumps(self._payload),
                                      stream = stream
                                      )
         elif method=='GET':
@@ -972,6 +978,39 @@ class chained_request():
                                      stream = stream
                                      )
         return response_wrapper(response)
+    
+class chain_ws:
+    def __init__(self,url):
+        self.url = url
+        self.ws = websocket.create_connection(url)
+        self._payload = None
+    def payload(self,payload):
+        self._payload = payload
+        return self
+    def recv(self):
+        if r:=self.ws.recv():
+            return r
+        else:
+            return
+    def recv_all(self):
+        res = []
+        while 1:
+            r = self.ws.recv()
+            if r:
+                res.append(r)
+            else:
+                break
+        return [response_wrapper(_) for _ in res]
+    def send(self,payload=None):
+        if payload:
+            self._payload = payload
+        self.ws.send(json.dumps(self._payload))
+        return self
+    def close(self):
+        self.ws.close()
+    def __del__(self):
+        self.close()
+    
 
 def D(x):  # 方差
     d = 0
@@ -1162,6 +1201,16 @@ def flatten(l):
         r.extend(i)
     return r
 
+def find_files_with_extension(directory, extension,with_root=False):
+    result = []
+    for root, dirs, files in os.walk(directory):
+        for file in files:
+            if file.endswith(extension):
+                if with_root:
+                    result.append(os.path.join(root, file))
+                else:
+                    result.append(file)
+    return result
 
 def getime(f=None):
     from datetime import datetime
