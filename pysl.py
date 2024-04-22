@@ -927,7 +927,7 @@ class chained_request():
         self._url = url
         self._headers = None
         self._payload = None
-        self._form = False
+        self._ajax = False
         
     def quote(self,format_url_args):
         self._url = self._url.format(*list(map(quote, format_url_args)))
@@ -937,8 +937,8 @@ class chained_request():
         self._payload = data
         return self
     
-    def form(self):
-        self._form = True
+    def ajax(self):
+        self._ajax = True
         return self
     
     def mutipayload(self,fields,boundary):
@@ -969,7 +969,7 @@ class chained_request():
         if method=='POST':
             response = requests.post(self._url,
                                      headers=self._headers,
-                                     data=self._payload if self._form else json.dumps(self._payload),
+                                     data=self._payload if self._ajax else json.dumps(self._payload),
                                      stream = stream
                                      )
         elif method=='GET':
@@ -1010,6 +1010,13 @@ class chain_ws:
         self.ws.close()
     def __del__(self):
         self.close()
+    
+def colorhex2rgb(s):
+    s = s.replace('#','')
+    s1=s[:2]
+    s2=s[2:4]
+    s3=s[4:6]
+    return int('0x'+s1,16),int('0x'+s2,16),int('0x'+s3,16)
     
 
 def D(x):  # 方差
@@ -1540,6 +1547,18 @@ def make_header_json(name):
         fp.write(r'"py": "ysl"')
         fp.write('\n}')
 
+def md5(input_string):
+    import hashlib
+    # 创建一个 MD5 hash 对象
+    md5_hash = hashlib.md5()
+    
+    # 更新 hash 对象的输入，将输入字符串编码为字节型并更新到 hash 对象中
+    md5_hash.update(input_string.encode('utf-8'))
+    
+    # 获取十六进制表示的散列值
+    md5_digest = md5_hash.hexdigest()
+    
+    return md5_digest
 
 @contextmanager
 def mute_all():
@@ -2182,8 +2201,5 @@ elif __name__ == '__main__':
 
 # 		p2 v p1
 # 		五子
-# 		截图转化
 # 		colorsboard touch to color
-# 		百度组
-# 		mutiprocess
 #       ftp 远程cmd
