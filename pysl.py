@@ -927,7 +927,7 @@ class chained_request():
         self._url = url
         self._headers = None
         self._payload = None
-        self._ajax = False
+        self._urlencode = False
         
     def quote(self,format_url_args):
         self._url = self._url.format(*list(map(quote, format_url_args)))
@@ -937,8 +937,8 @@ class chained_request():
         self._payload = data
         return self
     
-    def ajax(self):
-        self._ajax = True
+    def urlencode(self):
+        self._urlencode = True
         return self
     
     def mutipayload(self,fields,boundary):
@@ -969,7 +969,7 @@ class chained_request():
         if method=='POST':
             response = requests.post(self._url,
                                      headers=self._headers,
-                                     data=self._payload if self._ajax else json.dumps(self._payload),
+                                     data=self._payload if self._urlencode else json.dumps(self._payload),
                                      stream = stream
                                      )
         elif method=='GET':
